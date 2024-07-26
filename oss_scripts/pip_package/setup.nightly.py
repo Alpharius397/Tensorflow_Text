@@ -32,7 +32,7 @@ from setuptools.command.install import install
 from setuptools.dist import Distribution
 
 project_name = 'tensorflow-text-nightly'
-project_version = 'REPLACE_ME'
+project_version = '2.17.0'
 
 
 class BinaryDistribution(Distribution):
