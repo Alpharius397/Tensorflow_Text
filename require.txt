@@ -71,7 +71,7 @@ for wsl2 install (tensorflow on gpu):
 
     <--System Reboot-->
 
-    sudo apt-get updat
+    sudo apt-get update
     sudo apt-get upgrade
     sudo apt install python3 
     sudo apt install python3-pip
