@@ -1,4 +1,4 @@
-for tensorflow-gpu:
+for tensorflow-gpu (windows):
 
     python==3.9.18
     tensorflow==2.10.1
@@ -125,5 +125,16 @@ for tensorflow (wsl2):
     keras==3.4.1
     protobuf==3.20.3
 
+
+for object detection api (tf in wsl / Optional): [Note: this is a seperate model]
+    pip install "cython<3.0.0" wheel
+    pip3 install pyyaml==6.0.0
+    pip3 install tf-models-official==2.16.0 {needs tensorflow-text==2.16.0}
+    git clone --depth 1 https://github.com/tensorflow/models
+    sudo apt install -y protobuf-compiler
+    cd models/research/
+    protoc object_detection/protos/*.proto --python_out=.
+    cp object_detection/packages/tf2/setup.py .
+    python -m pip install .
     
 Big Hint=> If you're using the code inside a .py file: Use os.path.abspath(__file__) If you're using the code on a script directly or in Jupyter Notebooks: Put the file inside double-quotes. os.path.abspath("__file__")
